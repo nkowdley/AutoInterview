@@ -57,4 +57,22 @@ body::before {
   filter: blur(5px);
 }
 
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.input-field {
+  padding-bottom: 50px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);  
+}
+
 
