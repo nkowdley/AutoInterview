@@ -1,7 +1,8 @@
 'use strict';
 (function() {
 
-function MainController($scope, $http) {
+function MainController($scope, $http, Upload) {
+  /*
   var self = this;
   this.awesomeThings = [];
 
@@ -20,6 +21,22 @@ function MainController($scope, $http) {
   this.deleteThing = function(thing) {
     $http.delete('/api/things/' + thing._id);
   };
+  */
+  var self = this;
+console.log('poop');
+  this.upload = function (file) {
+    console.log("Gooble gork");
+        Upload.upload({
+            url: '/acceptResume',
+            headers: {'Content-Type': 'multipart/form-data'},
+            method: 'POST',
+            data: {'resume': file}
+        }).then(function (resp) {
+            console.log('Success');
+        }, function (resp) {
+            console.log('Error');
+        });
+    };
 }
 
 angular.module('autoInterviewApp')
