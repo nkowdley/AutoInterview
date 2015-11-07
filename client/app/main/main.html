@@ -1,7 +1,7 @@
 <navbar></navbar>
 
 
-<div class="container">
+<div class="container" ua-has-permission="user">
   <div class="jumbotron">
     <h1 class="text-center">Find Your Dream Job Today</h1>
     <p class="text-center">Connect with Our Exclusive Employers</p>
@@ -9,6 +9,19 @@
       <span class="glyphicon glyphicon-upload"></span> Upload Resume
     </button>
   </div>
+</div>
+
+<div class="container" ua-has-permission="admin">
+  <table ng-table="main.tableParams" class="table" show-filter="true">
+      <tr ng-repeat="job in $data">
+          <td data-title="'Name'" filter="{job_name: 'text'}" sortable="'job_name'">
+              {{job.jobname}}</td>
+          <td data-title="'Company'" filter="{company: 'text'}" sortable="'company'">
+              {{job.company}}</td>
+          <td data-title="'Details'" filter="{details: 'text'}" sortable="'details'">
+              {{job.jobdetails}}</td>
+      </tr>
+  </table>
 </div>
 
 
