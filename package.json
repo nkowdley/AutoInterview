@@ -21,7 +21,8 @@
     "connect-mongo": "^0.8.1",
     "serve-favicon": "^2.3.0",
     "gridfs-stream": "^1.0.0",
-    "multer" : "0.1.6"
+    "multer" : "0.1.6",
+    "python-shell" : "0.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.0",
