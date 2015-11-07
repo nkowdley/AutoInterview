@@ -1,0 +1,65 @@
+/*Styles for pitt.edu/~nsk website*/
+/*YOU SHOULDN'T BE HERE*/
+
+body	{ background-color: #597DB9;
+	 font-family: tohoma, geneva, sans-serif;
+	 }
+
+
+#container	{height:auto;
+		width:auto;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: auto;
+		margin-bottom: auto;
+		background-color: #597DB9;
+		}
+
+a:link		{color: #3D443C;
+		text-decoration: underline;
+		}
+
+
+a:visited	{color: #3D443C;
+		text-decoration: none;
+		}
+	
+
+a:hover		{color: #8AA187;
+		text-decoration:underline;}
+
+h1		{color: #3D443C;
+		}
+
+h2		{color: #597DB9;
+		}
+
+table		{background-color: #CCDFED;
+		border-top-style: solid;
+		border-bottom-style: solid;
+		border-right-style: solid;
+		border-left-style: solid;		
+		position: relative;
+		width: 600px;
+		padding: 10px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-right: 100px;
+		margin-left: 100px;
+		border-top-color: #8AA187;
+		border-bottom-color: #8AA187;
+		border-left-color: #8AA187;
+		border-right-color: #8AA187;
+		color: #080808;
+		text-align: left;	`
+		}
+
+td		{vertical-align: top;}
+
+::selection { background: #8AA187;
+		color: #3D443C;		}
+::-moz-selection { background: #8AA187;
+		color: #3D443C;		}
+
+
+		

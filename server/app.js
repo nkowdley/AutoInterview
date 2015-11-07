@@ -8,6 +8,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import config from './config/environment';
 import http from 'http';
+import multer from 'multer';
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost/interview', function(err) {
@@ -20,7 +21,6 @@ mongoose.connect('mongodb://localhost/interview', function(err) {
 
 //make db connection
 var db=mongoose.connection;
-
 // Populate databases with sample data
 if (config.seedDB) { require('./config/seed'); }
 
@@ -29,6 +29,9 @@ var app = express();
 var server = http.createServer(app);
 require('./config/express')(app);
 require('./routes')(app);
+
+//handle file uploads
+app.use(multer({ dest: './uploads/'}))
 
 // Start server
 function startServer() {
