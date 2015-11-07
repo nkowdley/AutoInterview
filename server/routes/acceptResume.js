@@ -17,7 +17,7 @@ person.save(function (err, person) {
   if (err) return console.error(err);
 });
 
-res.send(req.body);
+res.send(req.files);
 }]);
 
 module.exports = router;
