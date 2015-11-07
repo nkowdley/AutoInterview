@@ -4,7 +4,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var db=mongoose.connection;
 var fs = require('fs');
-
+var PythonShell=require('python-shell');
 /* Post home page. */
 router.post('/', function(req, res, next) {
 
@@ -31,6 +31,7 @@ router.post('/', function(req, res, next) {
 
 //push the name onto the array
   query={company:req.body.company};
+
   db.collection('jobslists').findOneAndUpdate(query, {$push: {applicants: {name:req.body.name, score:'1'}}}, {upsert:true}, function(err, doc){
     if (err)
     {
@@ -46,6 +47,7 @@ router.post('/', function(req, res, next) {
   //   }
   // });
   console.log("dbs updated");
+  res.send("cool");
 
 });
 
