@@ -12,18 +12,19 @@ var PythonShell = require('python-shell');
 /* Accept Post Request page. */
 router.post('/',[ multer({ dest: './uploads/'}), function(req, res, next) {
 
-//create the person object from the post request
-var person=new applicant(
-{name: req.body.name,
-resume: req.files.resume.path
-});
-//save the items in the db
-person.save(function (err, person) {
-  if (err) return console.error(err);
-});
-res.send(req.files);
+  //create the person object from the post request
+  var person=new applicant(
+    {name: req.body.name,
+      resume: req.files.resume.path
+    });
+    
+    //save the items in the db
+    person.save(function (err, person) {
+      if (err) return console.error(err);
+    });
+    res.send(req.files);
 
 
-}]);
+  }]);
 
-module.exports = router;
+  module.exports = router;
