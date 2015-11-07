@@ -13,7 +13,8 @@ router.get('/', function(req, res, next) {
       return next(err);
     }
     var testJobs={"jobs":jobs};
-    res.send(testJobs);
+    var testData={data:testJobs};
+    res.send(testData);
   });
 
 });
