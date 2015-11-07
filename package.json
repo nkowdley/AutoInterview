@@ -22,7 +22,8 @@
     "serve-favicon": "^2.3.0",
     "gridfs-stream": "^1.0.0",
     "multer" : "0.1.6",
-    "python-shell" : "0.2.0"
+    "python-shell" : "0.2.0",
+    "fs" : "0.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.0",

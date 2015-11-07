@@ -6,14 +6,13 @@ var db=mongoose.connection;
 /* GET home page. */
 router.get('/', function(req, res, next) {
 //dump all jobs
-  db.collection('jobslists').find().toArray(function(err, jobs){
+  db.collection('jobslists').findOne({company:req.query['company']}).toArray(function(err, jobs){
     if (err)
     {
       console.log("Error:(err)");
       return next(err);
     }
-    var testJobs={"jobs":jobs};
-    res.send(testJobs);
+    res.send(jobs);
   });
 
 });
