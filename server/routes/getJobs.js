@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
+var db=mongoose.connection;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
-  db.collection('jobslist').find().toArray(function(err, jobs){
+//dump all jobs
+  db.collection('jobslists').find().toArray(function(err, jobs){
     if (err)
     {
       console.log("Error:(err)");

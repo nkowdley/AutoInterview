@@ -3,8 +3,7 @@ var mongoose = require('mongoose');
 var schema = new mongoose.Schema({
   //schema setup
   name: String,
-  resume: String,
-  jobsapplied: []
+  resume: String
 });
 
 module.exports = mongoose.model('applicants', schema);

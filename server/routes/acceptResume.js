@@ -22,10 +22,14 @@ person.save(function (err, person) {
 });
 
 //res.send(req.files);
+//var options = {
+//  args: ['value1', 'value2', 'value3']
+//};
 
-PythonShell.run('my_script.py', function (err) {
+PythonShell.run('hello-world.py', //options,
+function (err) {
   if (err) throw err;
-  console.log('finished');
+  console.log('python ran successfully!');
 });
 
 }]);
