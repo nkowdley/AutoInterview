@@ -5,6 +5,10 @@ var multer= require('multer');
 var mongoose = require('mongoose');
 var db=mongoose.connection;
 var applicant= require('../models/applicants.js');
+
+//run swaroops script
+var PythonShell = require('python-shell');
+
 /* Accept Post Request page. */
 router.post('/',[ multer({ dest: './uploads/'}), function(req, res, next) {
 //create the person object from the post request
@@ -17,7 +21,13 @@ person.save(function (err, person) {
   if (err) return console.error(err);
 });
 
-res.send(req.files);
+//res.send(req.files);
+
+PythonShell.run('my_script.py', function (err) {
+  if (err) throw err;
+  console.log('finished');
+});
+
 }]);
 
 module.exports = router;
