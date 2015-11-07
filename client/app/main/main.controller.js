@@ -23,22 +23,18 @@ function MainController($scope, $http, Upload) {
   };
   */
   var self = this;
-  this.success = false;
-
+console.log('poop');
   this.upload = function (file) {
-        this.success = true;
+    console.log("Gooble gork");
         Upload.upload({
             url: '/acceptResume',
+            headers: {'Content-Type': 'multipart/form-data'},
             method: 'POST',
-            data: {file: file}
+            data: {'resume': file}
         }).then(function (resp) {
-            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-            self.success = true;
+            console.log('Success');
         }, function (resp) {
-            console.log('Error status: ' + resp.status);
-        }, function (evt) {
-            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+            console.log('Error');
         });
     };
 }
