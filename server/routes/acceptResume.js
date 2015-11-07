@@ -10,7 +10,7 @@ router.post('/',[ multer({ dest: './uploads/'}), function(req, res, next) {
 //create the person object from the post request
 var person=new applicant(
 {name: req.body.name,
-resume: "1"
+resume: req.files.resume.path
 });
 //save the items in the db
 person.save(function (err, person) {
