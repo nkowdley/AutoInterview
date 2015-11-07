@@ -23,6 +23,7 @@ module.exports = function(config) {
       'client/bower_components/ng-file-upload/ng-file-upload.js',
       'client/bower_components/userapp/userapp.client.js',
       'client/bower_components/userapp-angular/angularjs.userapp.js',
+      'client/bower_components/ng-table/dist/ng-table.min.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/app.js',

@@ -7,7 +7,9 @@ angular.module('autoInterviewApp', [
   'ui.router',
   'ui.bootstrap',
   'ngFileUpload',
-  'UserApp'
+  'UserApp',
+  'ngTable',
+  'ngResource'
 ])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
