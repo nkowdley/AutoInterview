@@ -5,6 +5,10 @@ angular.module('autoInterviewApp')
     $scope.menu = [{
       'title': 'Home',
       'state': 'main'
+    },
+    {
+    	'title': 'Logout',
+    	'state':'logout'
     }];
 
     $scope.isCollapsed = true;

@@ -20,10 +20,9 @@ module.exports = function(config) {
       'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'client/bower_components/lodash/dist/lodash.compat.js',
       'client/bower_components/angular-ui-router/release/angular-ui-router.js',
-<<<<<<< HEAD
       'client/bower_components/ng-file-upload/ng-file-upload.js',
-=======
->>>>>>> 5307d55ee4fe01a0d00954f190c00c233b3a7e48
+      'client/bower_components/userapp/userapp.client.js',
+      'client/bower_components/userapp-angular/angularjs.userapp.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/app.js',
