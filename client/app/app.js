@@ -9,7 +9,8 @@ angular.module('autoInterviewApp', [
   'ngFileUpload',
   'UserApp',
   'ngTable',
-  'ngResource'
+  'ngResource',
+  'sharedProperties'
 ])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider

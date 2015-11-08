@@ -59,17 +59,7 @@ function MainController($scope, $http, Upload, NgTableParams,$resource,$state,sh
 
     this.changeState = function(data){
       sharedProperties.setUser(data);
-    };
-
-     /*$http.get('/getJobs').then(function(response) {
-      self.jobs = response.data;
-      console.log(self.jobs);
-      console.log(self.jobs[0].jobname);
-      self.tableParams.reload();
-    });*/
-
-
-    
+    };    
 }
 
 angular.module('autoInterviewApp')
