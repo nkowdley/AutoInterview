@@ -1,6 +1,13 @@
 <navbar></navbar>
 
+
 <div class="container" ua-has-permission="user">
+
+	<div class="alert alert-success alert-dismissible" role="alert" ng-hide="!apply.button.applied">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Sweet!</strong> You successfully applied for the role of {{apply.user.job}} at {{apply.user.company}}
+</div>
+
   <table ng-table="apply.tableParams" class="table" show-filter="true">
       <tr ng-repeat="job in $data">
           <td title="'Name'"  sortable="'jobname'">
@@ -10,8 +17,8 @@
           <td title="'Details'"  sortable="'jobdetails'">
               {{job.jobdetails}}</td>
           <td title="'Apply'">
-          	<button type="button" class="btn btn-success center-block">Submit Resume</button>
-          </td>
+          	<button type="button" ng-click="apply.applyForJob(user.first_name, job.company, job.jobname)"class="btn btn-success center-block">Submit Resume</button>
+		  </td>
       </tr>
   </table>
 </div>

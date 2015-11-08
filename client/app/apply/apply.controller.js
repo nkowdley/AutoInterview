@@ -5,6 +5,11 @@ function ApplyController($scope, $http, Upload, NgTableParams,$resource) {
 
   var self = this;
   this.jobs = {};
+  this.button = {};
+  this.button.applied = false;
+  this.user = {};
+  this.user.job = '';
+  this.user.company = '';
   //this.tableParams = new ngTableParams({}, {dataset: this.jobs});
  
   this.upload = function (file) {
@@ -37,6 +42,25 @@ function ApplyController($scope, $http, Upload, NgTableParams,$resource) {
         });
       }
     });
+
+    this.applyForJob = function(user_name, user_company, user_job){
+      $http({
+        method: 'POST',
+        url: '/applyJob',
+        data: {name: user_name, company: user_company, job: user_job} 
+      }).then(function (resp) {
+            console.log('Success');
+            self.applied(user_job,user_company);
+        }, function (resp) {
+            console.log('Error');
+        });  
+    };
+
+    this.applied = function(job,company) {
+      this.button.applied = true;
+      this.user.job = job;
+      this.user.company = company;
+    };
 }
 
 angular.module('autoInterviewApp')

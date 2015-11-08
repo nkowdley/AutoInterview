@@ -5,6 +5,8 @@ function MainController($scope, $http, Upload, NgTableParams,$resource) {
 
   var self = this;
   this.jobs = {};
+  this.button = {};
+  this.button.applied = false;
   //this.tableParams = new ngTableParams({}, {dataset: this.jobs});
  
   this.upload = function (file) {
@@ -15,6 +17,7 @@ function MainController($scope, $http, Upload, NgTableParams,$resource) {
             data: {'resume': file}
         }).then(function (resp) {
             console.log('Success');
+            self.applied();
         }, function (resp) {
             console.log('Error');
         });
@@ -36,6 +39,10 @@ function MainController($scope, $http, Upload, NgTableParams,$resource) {
         });
       }
     });
+
+    this.applied = function() {
+      this.button.applied = true; 
+    };
 
      /*$http.get('/getJobs').then(function(response) {
       self.jobs = response.data;
