@@ -199,7 +199,7 @@ def makeRankings(dict):
     enthu = ['team', 'hackathon', 'project', 'create']
     teach = ['learn', 'investigate', 'execute']
     total =0;
-    '''zero = 0;
+    zero = 0;
     numOfSkills = len(skills)
     for words in skils: #skills
         num = dict.get(words)
@@ -208,7 +208,7 @@ def makeRankings(dict):
             zero = zero + 1
     string = 'skils : ' + str(zero)
     line = f.write( string )
-    line = f.write('\n')'''
+    line = f.write('\n')
     zero = 0;
     #numOfLead = len(leadership)
     for words in leadership: #skills
