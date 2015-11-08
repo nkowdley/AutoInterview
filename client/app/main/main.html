@@ -2,6 +2,11 @@
 
 
 <div class="container" ua-has-permission="user">
+<div class="alert alert-success alert-dismissible" role="alert" ng-hide="!main.button.applied">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Nice!</strong> Your resume was uploaded successfully.
+</div>
+
   <div class="jumbotron">
     <h1 class="text-center">Find Your Dream Job Today</h1>
     <p class="text-center">Connect with Our Exclusive Employers</p>
@@ -11,17 +16,19 @@
   </div>
 </div>
 
-<!-- Insert code for the employee table for submissions -->
-
 <div class="container" ua-has-permission="admin">
   <table ng-table="main.tableParams" class="table" show-filter="true">
       <tr ng-repeat="job in $data">
-          <td title="'Name'" filter="{jobname:'text'}" sortable="'jobname'">
-              {{job.jobname}}</td>
-          <td title="'Company'" filter="{company:'text'}" sortable="'company'">
-              {{job.company}}</td>
-          <td title="'Details'" filter="{jobdetails:'text'}" sortable="'jobdetails'">
-              {{job.jobdetails}}</td>
+          <td title="'Name'" sortable="'name'" class="text-center">
+              {{job.name}}</td>
+          <td title="'Title'" sortable="'title'" class="text-center">
+              {{job.title}}</td>
+          <td title="'Score'" sortable="'score'" class="text-center">
+              {{job.score}}</td>
+          <td title="'More Info'">
+            <button type="button" class="btn btn-success center-block"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </td>
+          
       </tr>
   </table>
 </div> 

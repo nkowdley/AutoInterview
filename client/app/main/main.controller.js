@@ -5,6 +5,9 @@ function MainController($scope, $http, Upload, NgTableParams,$resource) {
 
   var self = this;
   this.jobs = {};
+  this.button = {};
+  this.button.applied = false;
+  this.applications = [];
   //this.tableParams = new ngTableParams({}, {dataset: this.jobs});
  
   this.upload = function (file) {
@@ -15,6 +18,7 @@ function MainController($scope, $http, Upload, NgTableParams,$resource) {
             data: {'resume': file}
         }).then(function (resp) {
             console.log('Success');
+            self.applied();
         }, function (resp) {
             console.log('Error');
         });
@@ -32,10 +36,26 @@ function MainController($scope, $http, Upload, NgTableParams,$resource) {
         // ajax request to api
         return Api.get(params.url()).$promise.then(function(data) {
           params.total(data.jobs.length);
-          return data.jobs;
+          for(var i = 0; i < data.jobs.length;i++){
+            for(var j = 0; j < data.jobs[i].applicants.length;j++){
+              var objects = {"name":data.jobs[i].applicants[j].name,
+                             "score":data.jobs[i].applicants[j].score,
+                             "title":data.jobs[i].jobname,
+                             "company":data.jobs[i].company,
+                             "details":data.jobs[i].jobdetails};
+
+              self.applications.push(objects);
+            }
+            //console.log(self.applications[0].name);
+          }
+          return self.applications;
         });
       }
     });
+
+    this.applied = function() {
+      this.button.applied = true; 
+    };
 
      /*$http.get('/getJobs').then(function(response) {
       self.jobs = response.data;
