@@ -1,0 +1,8 @@
+GPA : 3.17
+
+Currentskils : 1
+leadership : 0
+collaboration : 7.0
+communication : 7.0
+enthusism : 6.0
+teachability : 0

@@ -4,6 +4,7 @@ import sys
 import StringIO
 import textmining
 import numpy as np
+import json
 from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
@@ -188,9 +189,11 @@ def makeTable(string):
     makeRankings(dict)
 
 def makeRankings(dict):
-    f = open("output.txt","w")
+    #f = open("server/views/output.txt","w")
+    output={}
     string = 'GPA : ' + str(gpa)   #gpa
-    line = f.write( string );
+    #line = f.write( string );
+    output['GPA']=gpa
 
 
     leadership = ['Led', 'Planned', 'Executed']
@@ -201,13 +204,14 @@ def makeRankings(dict):
 
     zero = 0;
     numOfSkills = len(skills)
-    for words in skils: #skills
+    for words in skills: #skills
         num = dict.get(words)
         if num > 0:
             zero = zero + 1
     string = 'skils : ' + str(zero)
-    line = f.write( string )
-    line = f.write('\n')
+    output['skils']=str(zero)
+    #line = f.write( string )
+    #line = f.write('\n')
     zero = 0;
     #numOfLead = len(leadership)
     for words in leadership: #skills
@@ -215,46 +219,53 @@ def makeRankings(dict):
         if not num == None:
             print(num)
             zero = zero + float(num)
-    string = 'leadership : ' + str(zero)
-    line = f.write( string )
-    line = f.write('\n')
+    #string = 'leadership : ' + str(zero)
+    output['leadership']=str(zero)
+    #line = f.write( string )
+    #line = f.write('\n')
     zero = 0;
     #numOfLead = len(collaboration)
     for words in collab: #skills
         num = dict.get(words)
         if not num == None:
             zero = zero + float(num)
-    string = 'collaboration : ' + str(zero)
-    line = f.write( string )
-    line = f.write('\n')
+    #string = 'collaboration : ' + str(zero)
+    #line = f.write( string )
+    #line = f.write('\n')
+    output['collaboration']=str(zero)
     zero = 0;
     #numOfLead = len(communication)
     for words in collab: #skills
         num = dict.get(words)
         if not num == None:
             zero = zero + float(num)
-    string = 'communication : ' + str(zero)
-    line = f.write( string )
-    line = f.write('\n')
+    #string = 'communication : ' + str(zero)
+    #line = f.write( string )
+    #line = f.write('\n')
+    output['communication']=str(zero)
     zero = 0;
     #numOfLead = len(enthusism)
     for words in enthu: #skills
         num = dict.get(words)
         if not num == None:
             zero = zero + float(num)
-    string = 'enthusism : ' + str(zero)
-    line = f.write( string )
-    line = f.write('\n')
+    #string = 'enthusism : ' + str(zero)
+    #line = f.write( string )
+    #line = f.write('\n')
+    output['enthusism']=str(zero)
     zero = 0;
     #numOfLead = len(enthusism)
     for words in teach: #skills
         num = dict.get(words)
         if not num == None:
             zero = zero + float(num)
-    string = 'teachability : ' + str(zero)
-    line = f.write( string )
-    line = f.write('\n')
-    f.close
+    #string = 'teachability : ' + str(zero)
+    #line = f.write( string )
+    #line = f.write('\n')
+    output['teachability']=str(zero)
+    with open('server/views/output.txt', 'w') as outfile:
+        json.dump(output, outfile)
+    #f.close
 
 
 def main():

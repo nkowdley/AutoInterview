@@ -1,0 +1,1 @@
+{"skils": "1", "enthusism": "6.0", "communication": "7.0", "collaboration": "7.0", "GPA": "3.17\n\nCurrent", "teachability": "0", "leadership": "0"}

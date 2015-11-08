@@ -18,12 +18,13 @@ router.get('/', function(req, res, next) {
       console.log("Error:(err)");
       return next(err);
     }
+
     var sid=phone.audio;
     console.log(sid);
     var options = {
       host: 'api.twilio.com',
       port: 443,
-      path: '/2010-04-01/Accounts/' + accountSid + '/Recordings/'+ sid  + '.mp3',
+      path: host + '/2010-04-01/Accounts/' + accountSid + '/Recordings/'+ sid  + '.mp3',
       method: 'GET',
       auth: sid + ":" + authToken,
       agent: false
