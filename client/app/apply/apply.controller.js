@@ -1,7 +1,7 @@
 'use strict';
 (function() {
 
-function MainController($scope, $http, Upload, NgTableParams,$resource) {
+function ApplyController($scope, $http, Upload, NgTableParams,$resource) {
 
   var self = this;
   this.jobs = {};
@@ -28,6 +28,7 @@ function MainController($scope, $http, Upload, NgTableParams,$resource) {
         jobname: 'asc'
       }
     }, {
+      filterDelay: 300,
       getData: function(params) {
         // ajax request to api
         return Api.get(params.url()).$promise.then(function(data) {
@@ -36,19 +37,9 @@ function MainController($scope, $http, Upload, NgTableParams,$resource) {
         });
       }
     });
-
-     /*$http.get('/getJobs').then(function(response) {
-      self.jobs = response.data;
-      console.log(self.jobs);
-      console.log(self.jobs[0].jobname);
-      self.tableParams.reload();
-    });*/
-
-
-    
 }
 
 angular.module('autoInterviewApp')
-  .controller('MainController', MainController);
+  .controller('ApplyController', ApplyController);
 
 })();

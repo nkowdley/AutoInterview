@@ -11,17 +11,19 @@
   </div>
 </div>
 
+<!-- Insert code for the employee table for submissions -->
+
 <div class="container" ua-has-permission="admin">
   <table ng-table="main.tableParams" class="table" show-filter="true">
       <tr ng-repeat="job in $data">
-          <td data-title="'Name'" filter="{job_name: 'text'}" sortable="'job_name'">
+          <td title="'Name'" filter="{jobname:'text'}" sortable="'jobname'">
               {{job.jobname}}</td>
-          <td data-title="'Company'" filter="{company: 'text'}" sortable="'company'">
+          <td title="'Company'" filter="{company:'text'}" sortable="'company'">
               {{job.company}}</td>
-          <td data-title="'Details'" filter="{details: 'text'}" sortable="'details'">
+          <td title="'Details'" filter="{jobdetails:'text'}" sortable="'jobdetails'">
               {{job.jobdetails}}</td>
       </tr>
   </table>
-</div>
+</div> 
 
 

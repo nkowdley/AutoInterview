@@ -22,5 +22,11 @@ angular.module('autoInterviewApp')
     	data: {
       		public: true
     	}
+  	  })
+  	  .state('apply', {
+    	url: '/apply',
+   		templateUrl: 'app/apply/apply.html',
+    	controller: 'ApplyController',
+        controllerAs: 'apply'
   	  });
   });

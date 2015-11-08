@@ -1,0 +1,17 @@
+<navbar></navbar>
+
+<div class="container" ua-has-permission="user">
+  <table ng-table="apply.tableParams" class="table" show-filter="true">
+      <tr ng-repeat="job in $data">
+          <td title="'Name'"  sortable="'jobname'">
+              {{job.jobname}}</td>
+          <td title="'Company'"  sortable="'company'">
+              {{job.company}}</td>
+          <td title="'Details'"  sortable="'jobdetails'">
+              {{job.jobdetails}}</td>
+          <td title="'Apply'">
+          	<button type="button" class="btn btn-success center-block">Submit Resume</button>
+          </td>
+      </tr>
+  </table>
+</div>
