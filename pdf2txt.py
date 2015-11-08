@@ -114,8 +114,9 @@ def bob(argv, value):
         device = TagExtractor(rsrcmgr, outfp, codec=codec)
     else:
         return usage()
-    for fname in args:
-        fp = file(fname, 'rb')
+    #for fname in args:
+    for x in range (1,1):
+        fp = file(argv[x], 'rb')
         interpreter = PDFPageInterpreter(rsrcmgr, device)
         print('____________________________Start TEST #1 ___________________________')
         for page in PDFPage.get_pages(fp, pagenos,
@@ -182,14 +183,26 @@ def makeTable(string):
     makeRankings(dict)
 
 def makeRankings(dict):
-    f = open('output.txt','w')
-    f.write('GPA :'gpa);
+    f = open("output.txt","w")
+    string = 'GPA : ' + str(gpa)   #gpa
+    line = f.write( string );
+    zero = 0;
+    numOfSkills = len(skills)
 
-    
+    for words in skils: #skills
+        num = dict.get(words)
+        if num > 0:
+            zero = zero + 1
+    string = 'skils : ' + str(zero.numOfSkills)
+    line = f.write( string )
+    f.close
+
+
 def main():
     global gpa
     global skills
-    skills = argv[2]
+    skills = sys.argv[2]
+    temp = [sys.argv[0], sys.argv[0]]
     string = ""
     value = 'Hello World'
     value = bob(sys.argv, value)
@@ -213,4 +226,7 @@ def main():
     #print gpa
 
 if __name__ == '__main__':
+    print(len(sys.argv))
+    print(sys.argv[0])
+    print(sys.argv[1])
     main()
