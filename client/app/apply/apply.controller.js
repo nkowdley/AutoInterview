@@ -47,7 +47,7 @@ function ApplyController($scope, $http, Upload, NgTableParams,$resource) {
       $http({
         method: 'POST',
         url: '/applyJob',
-        data: {name: user_name, company: user_company, job: user_job} 
+        data: {name: user_name, company: user_company, jobname: user_job} 
       }).then(function (resp) {
             console.log('Success');
             self.applied(user_job,user_company);
