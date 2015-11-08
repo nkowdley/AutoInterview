@@ -28,5 +28,11 @@ angular.module('autoInterviewApp')
    		templateUrl: 'app/apply/apply.html',
     	controller: 'ApplyController',
         controllerAs: 'apply'
-  	  });
+  	  })
+      .state('analysis', {
+        url: '/analysis',
+        templateUrl: 'app/analysis/analysis.html', 
+        params: { myParam: null},
+        controller: 'RegistrationCrl',    
+    });
   });
