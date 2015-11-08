@@ -5,9 +5,9 @@ var mongoose = require('mongoose');
 var db=mongoose.connection;
 var fs = require('fs');
 var PythonShell=require('python-shell');
+
 /* Post home page. */
 router.post('/', function(req, res, next) {
-
 
   var query = {'name':req.body.name};
   db.collection('applicants').findOneAndUpdate(query, {$push: {jobsapplied: req.body.job}}, {upsert:true}, function(err, doc){
