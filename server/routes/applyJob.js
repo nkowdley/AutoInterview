@@ -10,7 +10,7 @@ var PythonShell=require('python-shell');
 router.post('/', function(req, res, next) {
 
   var query = {'name':req.body.name};
-  db.collection('applicants').findOneAndUpdate(query, {$push: {jobsapplied: req.body.job}}, {upsert:true}, function(err, doc){
+  db.collection('applicants').findOneAndUpdate(query, {$set :{$push: {jobsapplied: req.body.job}}}, {upsert:true}, function(err, doc){
     if (err)
     {
       return res.send(500, { error: err });
