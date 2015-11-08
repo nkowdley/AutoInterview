@@ -10,7 +10,6 @@ angular.module('autoInterviewApp', [
   'UserApp',
   'ngTable',
   'ngResource',
-  'sharedProperties'
 ])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
