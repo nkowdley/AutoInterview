@@ -17,6 +17,11 @@ from Rank import Rank
 
 gpa = 0.0
 skills = []
+leadership = ['Led', 'Planned', 'Executed']
+collab = ['team', 'member', 'club', 'team', 'collaborate']
+comm = ['monitor', 'update', 'propose', 'closely']
+enthu = ['team', 'hackathon', 'project', 'create']
+teach = ['learn', 'investigate', 'execute']
 # main
 def bob(argv, value):
     import getopt
@@ -114,8 +119,9 @@ def bob(argv, value):
         device = TagExtractor(rsrcmgr, outfp, codec=codec)
     else:
         return usage()
-    for fname in args:
-        fp = file(fname, 'rb')
+    #for fname in args:
+    for x in range (1,2):
+        fp = file(argv[x], 'rb')
         interpreter = PDFPageInterpreter(rsrcmgr, device)
         print('____________________________Start TEST #1 ___________________________')
         for page in PDFPage.get_pages(fp, pagenos,
@@ -182,14 +188,81 @@ def makeTable(string):
     makeRankings(dict)
 
 def makeRankings(dict):
-    f = open('output.txt','w')
-    f.write('GPA :'gpa);
+    f = open("output.txt","w")
+    string = 'GPA : ' + str(gpa)   #gpa
+    line = f.write( string );
 
-    
+
+    leadership = ['Led', 'Planned', 'Executed']
+    collab = ['team', 'member', 'club', 'team', 'collaborate']
+    comm = ['monitor', 'update', 'propose', 'closely']
+    enthu = ['team', 'hackathon', 'project', 'create']
+    teach = ['learn', 'investigate', 'execute']
+
+    zero = 0;
+    numOfSkills = len(skills)
+    for words in skils: #skills
+        num = dict.get(words)
+        if num > 0:
+            zero = zero + 1
+    string = 'skils : ' + str(zero)
+    line = f.write( string )
+    line = f.write('\n')
+    zero = 0;
+    #numOfLead = len(leadership)
+    for words in leadership: #skills
+        num = dict.get(words)
+        if not num == None:
+            print(num)
+            zero = zero + float(num)
+    string = 'leadership : ' + str(zero)
+    line = f.write( string )
+    line = f.write('\n')
+    zero = 0;
+    #numOfLead = len(collaboration)
+    for words in collab: #skills
+        num = dict.get(words)
+        if not num == None:
+            zero = zero + float(num)
+    string = 'collaboration : ' + str(zero)
+    line = f.write( string )
+    line = f.write('\n')
+    zero = 0;
+    #numOfLead = len(communication)
+    for words in collab: #skills
+        num = dict.get(words)
+        if not num == None:
+            zero = zero + float(num)
+    string = 'communication : ' + str(zero)
+    line = f.write( string )
+    line = f.write('\n')
+    zero = 0;
+    #numOfLead = len(enthusism)
+    for words in enthu: #skills
+        num = dict.get(words)
+        if not num == None:
+            zero = zero + float(num)
+    string = 'enthusism : ' + str(zero)
+    line = f.write( string )
+    line = f.write('\n')
+    zero = 0;
+    #numOfLead = len(enthusism)
+    for words in teach: #skills
+        num = dict.get(words)
+        if not num == None:
+            zero = zero + float(num)
+    string = 'teachability : ' + str(zero)
+    line = f.write( string )
+    line = f.write('\n')
+    f.close
+
+
 def main():
     global gpa
     global skills
-    skills = argv[2]
+    skills = sys.argv[2]
+
+    #temp = [sys.argv[0], sys.argv[0]]
     string = ""
     value = 'Hello World'
     value = bob(sys.argv, value)
@@ -213,4 +286,7 @@ def main():
     #print gpa
 
 if __name__ == '__main__':
+    print(len(sys.argv))
+    print(sys.argv[0])
+    print(sys.argv[1])
     main()

@@ -15,6 +15,8 @@ module.exports = function(app) {
   app.use('/getJobs', require('./routes/getJobs')); //get a list of all Jobs we have in the db
   app.use('/acceptJobs', require('./routes/acceptJobs')); //allow employers to add jobs
   app.use('/applyJob', require('./routes/applyJob')); //allow employers to add jobs
+  app.use('/transcribeAudio', require('./routes/transcribeAudio')); //allow employers to add jobs
+  app.use('/getAudio', require('./routes/getAudio')); //allow employers to add jobs
   app.use('/test', require('./routes/test')); //test page
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')

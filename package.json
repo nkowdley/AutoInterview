@@ -23,7 +23,8 @@
     "gridfs-stream": "^1.0.0",
     "multer" : "0.1.6",
     "python-shell" : "0.2.0",
-    "fs" : "0.0.0"
+    "request" : "2.0.0",
+    "twilio" : "2.5.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.0",

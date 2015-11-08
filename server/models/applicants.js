@@ -4,6 +4,7 @@ var schema = new mongoose.Schema({
   //schema setup
   name: String,
   resume: String,
+  audio: String,
   jobsapplied: []
 });
 
