@@ -1,7 +1,7 @@
 'use strict';
 (function() {
 
-function MainController($scope, $http, Upload, NgTableParams,$resource) {
+function MainController($scope, $http, Upload, NgTableParams,$resource,$state,sharedProperties) {
 
   var self = this;
   this.jobs = {};
@@ -55,6 +55,10 @@ function MainController($scope, $http, Upload, NgTableParams,$resource) {
 
     this.applied = function() {
       this.button.applied = true; 
+    };
+
+    this.changeState = function(data){
+      sharedProperties.setUser(data);
     };
 
      /*$http.get('/getJobs').then(function(response) {
