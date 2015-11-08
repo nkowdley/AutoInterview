@@ -263,6 +263,8 @@ def makeRankings(dict):
     totalString = 'total : ' + str(total/60)
     line = f.write( totalString )
     line = f.write('\n')
+    iO = 'answer : private and public are correct, protected is not' 
+
     f.close
 
 
