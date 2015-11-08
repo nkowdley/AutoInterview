@@ -1,6 +1,7 @@
 <navbar></navbar>
 
 
+
 <div class="container" ua-has-permission="user">
 <div class="alert alert-success alert-dismissible" role="alert" ng-hide="!main.button.applied">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -26,11 +27,13 @@
           <td title="'Score'" sortable="'score'" class="text-center">
               {{job.score}}</td>
           <td title="'More Info'">
-            <button type="button" class="btn btn-success center-block"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            <button class="btn btn-success center-block" ng-click="main.changeState(job)" ui-sref="analysis"><span class="glyphicon glyphicon-search"></span></button>
           </td>
-          
       </tr>
   </table>
-</div> 
+</div>
+
+<!-- Modal -->
+
 
 
