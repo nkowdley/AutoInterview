@@ -30,7 +30,7 @@ router.post('/', function(req, res, next) {
   });
 
 //push the name onto the array
-  query={company:req.body.company};
+  query={'jobname':req.body.job};
 
   db.collection('jobslists').findOneAndUpdate(query, {$push: {applicants: {name:req.body.name, score:'1'}}}, {upsert:true}, function(err, doc){
     if (err)
